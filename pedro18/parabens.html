@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Aniversário 💕</title>
+  <style>
+    body {
+      background: linear-gradient(180deg, #fff5f7, #ffeef3);
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      color: rgb(196, 31, 31);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      max-width: 500px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Botão */
+    .continue-btn {
+      margin-top: 30px;
+      background-color: rgb(196, 31, 31);
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .continue-btn:hover {
+      background-color: #ff7ea8;
+      transform: scale(1.05);
+    }
+
+    /* Bolo animado */
+    .cake {
+      position: relative;
+      width: 150px;
+      height: 120px;
+      background: #ffb6c1;
+      border-radius: 10px;
+      box-shadow: 0 5px 0 #d96a87;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    .cake::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 30px;
+      background: #fff0f5;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 4px 0 #f7a1b3;
+    }
+
+    /* Velinhas */
+    .candle {
+      position: absolute;
+      top: -40px;
+      width: 8px;
+      height: 30px;
+      background: #ffd1dc;
+      border-radius: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .flame {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, #ffb347 40%, transparent 70%);
+      border-radius: 50%;
+      animation: flicker 0.2s infinite alternate;
+    }
+
+    /* Balões animados */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 40px;
+      height: 50px;
+      background: pink;
+      border-radius: 50% 50% 50% 50%;
+      animation: floatUp 6s ease-in infinite;
+      opacity: 0.8;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 20px;
+      background: #999;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0.9; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="cake">
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+  </div>
+
+  <h1>Feliz Aniversário, mi love </h1>
+  <p>Hoje é o dia de celebrar o garoto que faz meu coração sorrir todos os dias.  
+  Que sua nova fase venha cheia de luz, sonhos realizados e muito amor pra começar. 💕</p>
+
+  <a href="declaracao.html">
+    <button class="continue-btn">Continuar</button>
+  </a>
+
+  <script>
+    // Geração de balões
+    for (let i = 0; i < 15; i++) {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.background = `hsl(${Math.random() * 360}, 80%, 80%)`;
+      balloon.style.animationDuration = 5 + Math.random() * 4 + "s";
+      document.body.appendChild(balloon);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nós</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heart-animation">
+        <svg class="heart-svg" viewBox="0 0 512 512">
+            <path d="M471.7 73.7c-54.5-46.4-136-38.3-186.4 13.7L256 116.3l-29.3-28.9C176.3 35.4 94.8 27.3 40.3 73.7c-62.2 53-66.1 149.8-8.8 207.5l192.2 193.3c10.5 10.5 24.3 15.8 38.1 15.8s27.6-5.3 38.1-15.8L480.5 281.2c57.3-57.7 53.4-154.5-8.8-207.5z"
+            fill="none" stroke="rgb(196,31,31)" stroke-width="8"/>
+        </svg>
+    </div>
+
+    <div class="container hidden">
+        <h1>Seja bem vindo, meu amor</h1>
+        <p>Este espaço foi feito com todo meu carinho para ti, espero que goste e aproveite - e que também ignore algum erro, você sabe que não sou a melhor nisso, mas por ti vale a pena arriscar 💖</p>
+        <a href="pergunta.html"><button class="enter-btn">Entrar</button></a>
+    </div>
+
+    <script>
+        // Mostra o conteúdo após a animação
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.heart-animation').style.opacity = '0';
+                document.querySelector('.container').classList.remove('hidden');
+            }, 3500);
+        });
+    </script>
+</body>
+</html>

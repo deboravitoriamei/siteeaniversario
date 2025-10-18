@@ -1,0 +1,81 @@
+body {
+    background: linear-gradient(135deg, #83090f, rgb(104, 13, 38));
+    font-family: 'Comic Sans MS', sans-serif;
+    text-align: center;
+    color: #000000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Animação do coração */
+.heart-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeOut 1s ease-in-out 3s forwards;
+}
+
+.heart-svg {
+    width: 180px;
+    height: 180px;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation: drawHeart 3s ease forwards;
+}
+
+@keyframes drawHeart {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Container principal */
+.container {
+    background: rgb(241, 199, 199);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+    width: 90%;
+    max-width: 400px;
+    z-index: 10;
+    transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Títulos e botões */
+h1, h2 {
+    color: rgb(196, 31, 31);
+}
+
+button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.enter-btn {
+    background-color: #f5eaef;
+    color: rgb(14, 13, 13);
+}
+
+.enter-btn:hover {
+    background-color: #f5d1e2;
+}

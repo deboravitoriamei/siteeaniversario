@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quero saber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>É verdade que isso está aparecendo para o menino mais lindo e especial? </h2>
+        <div class="buttons">
+            <button id="yesBtn">Simm</button>
+            <button id="noBtn">Nam 🙄</button>
+        </div>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+
+        yesBtn.addEventListener("click", () => {
+            window.location.href = "parabens.html"; // leva pra página da celebração
+        });
+
+        noBtn.addEventListener("mouseover", () => {
+            const randomX = Math.random() * window.innerWidth * 0.6;
+            const randomY = Math.random() * window.innerHeight * 0.6;
+            noBtn.style.position = "absolute";
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
